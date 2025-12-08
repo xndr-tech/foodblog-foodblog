@@ -1,0 +1,904 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FoodBlog | Delicious Recipes, Meal Ideas, Home Cooking</title>
+    <meta name="description" content="FoodBlog is your ultimate destination for delicious recipes, inspiring meal ideas, and tips for joyful home cooking. Discover your next favorite dish!">
+    <meta name="keywords" content="recipes, food blog, cooking, meal ideas, home cooking, delicious, easy recipes, healthy meals, comfort food">
+    <meta name="robots" content="index, follow">
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://example.com">
+    <meta property="og:title" content="FoodBlog | Delicious Recipes, Meal Ideas, Home Cooking">
+    <meta property="og:description" content="FoodBlog is your ultimate destination for delicious recipes, inspiring meal ideas, and tips for joyful home cooking. Discover your next favorite dish!">
+    <meta property="og:image" content="https://via.placeholder.com/1200x630/e07a5f/ffffff?text=FoodBlog">
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://example.com">
+    <meta property="twitter:title" content="FoodBlog | Delicious Recipes, Meal Ideas, Home Cooking">
+    <meta property="twitter:description" content="FoodBlog is your ultimate destination for delicious recipes, inspiring meal ideas, and tips for joyful home cooking. Discover your next favorite dish!">
+    <meta property="twitter:image" content="https://via.placeholder.com/1200x675/e07a5f/ffffff?text=FoodBlog">
+
+    <link rel="canonical" href="https://example.com">
+    <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90' fill='%23e07a5f'%3E%F0%9F%8D%B4%3C/text%3E%3C/svg%3E">
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Organization",
+      "name": "FoodBlog",
+      "url": "https://example.com",
+      "logo": "https://via.placeholder.com/60x60/e07a5f/ffffff?text=FB",
+      "description": "Food blog showcasing delicious recipes, meal ideas, and cooking tips.",
+      "sameAs": [
+        "https://facebook.com/foodblog",
+        "https://instagram.com/foodblog",
+        "https://pinterest.com/foodblog"
+      ]
+    }
+    </script>
+
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&display=swap');
+
+        :root {
+            --primary-color: #e07a5f;
+            --secondary-color: #fdf4f2;
+            --accent-color: #c96248;
+            --text-color: #333;
+            --light-gray: #eee;
+            --dark-gray: #555;
+            --font-family-primary: 'Playfair Display', serif;
+            --font-family-secondary: sans-serif;
+        }
+
+        *, *::before, *::after {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: var(--font-family-secondary);
+            color: var(--text-color);
+            line-height: 1.6;
+            background-color: #fff;
+        }
+
+        header {
+            background-color: var(--secondary-color);
+            padding: 1rem 0;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 1.5rem;
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+
+        .logo {
+            font-family: var(--font-family-primary);
+            font-size: 2rem;
+            color: var(--primary-color);
+            text-decoration: none;
+            font-weight: 700;
+        }
+
+        .nav-links {
+            list-style: none;
+            display: flex;
+            gap: 1.5rem;
+            flex-wrap: wrap;
+        }
+
+        .nav-links a {
+            color: var(--dark-gray);
+            text-decoration: none;
+            font-weight: 500;
+            padding: 0.5rem 0;
+            position: relative;
+            transition: color 0.3s ease;
+        }
+
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background-color: var(--primary-color);
+            transition: width 0.3s ease;
+        }
+
+        .nav-links a:hover, .nav-links a:focus {
+            color: var(--primary-color);
+        }
+
+        .nav-links a:hover::after, .nav-links a:focus::after {
+            width: 100%;
+        }
+
+        .hero {
+            background: linear-gradient(rgba(253, 244, 242, 0.8), rgba(253, 244, 242, 0.8)), url('https://via.placeholder.com/1600x800/e07a5f/ffffff?text=Delicious+Food+Background') no-repeat center center/cover;
+            text-align: center;
+            padding: 8rem 0;
+            min-height: 70vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--text-color);
+        }
+
+        .hero-content {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .hero h1 {
+            font-family: var(--font-family-primary);
+            font-size: 3.5rem;
+            margin-bottom: 1rem;
+            color: var(--primary-color);
+            line-height: 1.2;
+        }
+
+        .hero p {
+            font-size: 1.3rem;
+            margin-bottom: 2rem;
+            color: var(--dark-gray);
+        }
+
+        .btn {
+            display: inline-block;
+            background-color: var(--primary-color);
+            color: #fff;
+            padding: 0.9rem 2rem;
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: bold;
+            transition: background-color 0.3s ease, transform 0.2s ease;
+            border: none;
+            cursor: pointer;
+            font-size: 1rem;
+        }
+
+        .btn:hover {
+            background-color: var(--accent-color);
+            transform: translateY(-2px);
+        }
+
+        section {
+            padding: 6rem 0;
+            text-align: center;
+            background-color: #fff;
+        }
+
+        section:nth-of-type(even) {
+            background-color: var(--secondary-color);
+        }
+
+        h2 {
+            font-family: var(--font-family-primary);
+            font-size: 2.5rem;
+            margin-bottom: 2.5rem;
+            color: var(--primary-color);
+            position: relative;
+            display: inline-block;
+        }
+
+        h2::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 60px;
+            height: 3px;
+            background-color: var(--accent-color);
+        }
+
+        .grid-3 {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .recipe-card {
+            background-color: #fff;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            text-align: left;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .recipe-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 6px 20px rgba(0,0,0,0.15);
+        }
+
+        .recipe-card img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            display: block;
+        }
+
+        .recipe-card-content {
+            padding: 1.5rem;
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .recipe-card h3 {
+            font-family: var(--font-family-primary);
+            font-size: 1.6rem;
+            color: var(--primary-color);
+            margin-bottom: 0.8rem;
+        }
+
+        .recipe-card p {
+            font-size: 0.95rem;
+            color: var(--dark-gray);
+            margin-bottom: 1rem;
+        }
+
+        .recipe-card .btn {
+            width: fit-content;
+            margin-top: auto; /* Pushes the button to the bottom */
+            font-size: 0.9rem;
+            padding: 0.7rem 1.5rem;
+        }
+
+        .tools-section {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 3rem;
+            margin-top: 3rem;
+        }
+
+        .tool-card {
+            background-color: #fff;
+            padding: 2.5rem;
+            border-radius: 8px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+            text-align: left;
+        }
+
+        .tool-card h3 {
+            font-family: var(--font-family-primary);
+            font-size: 2rem;
+            color: var(--accent-color);
+            margin-bottom: 1.5rem;
+            text-align: center;
+        }
+
+        .form-group {
+            margin-bottom: 1rem;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: bold;
+            color: var(--dark-gray);
+            font-size: 0.95rem;
+        }
+
+        .form-group input, .form-group select {
+            width: 100%;
+            padding: 0.8rem 1rem;
+            border: 1px solid var(--light-gray);
+            border-radius: 5px;
+            font-family: var(--font-family-secondary);
+            font-size: 1rem;
+            transition: border-color 0.3s ease;
+        }
+
+        .form-group input:focus, .form-group select:focus {
+            outline: none;
+            border-color: var(--primary-color);
+        }
+
+        .ingredient-input-row {
+            display: flex;
+            gap: 10px;
+            margin-bottom: 0.8rem;
+            align-items: center;
+        }
+
+        .ingredient-input-row input {
+            flex: 1;
+        }
+
+        .ingredient-input-row .quantity-input {
+            flex: 0.5;
+        }
+
+        .ingredient-input-row .unit-input {
+            flex: 0.4;
+        }
+
+        .ingredient-input-row .remove-ingredient {
+            background-color: #dc3545;
+            color: #fff;
+            border: none;
+            padding: 0.6rem 0.8rem;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+            font-size: 0.9rem;
+        }
+
+        .ingredient-input-row .remove-ingredient:hover {
+            background-color: #c82333;
+        }
+
+        .btn-secondary {
+            background-color: var(--dark-gray);
+            margin-left: 10px;
+        }
+
+        .btn-secondary:hover {
+            background-color: #444;
+        }
+
+        .tool-results {
+            margin-top: 2rem;
+            background-color: var(--secondary-color);
+            padding: 1.5rem;
+            border-radius: 5px;
+            min-height: 80px;
+            display: flex;
+            flex-direction: column;
+            gap: 0.5rem;
+            color: var(--dark-gray);
+            text-align: left;
+        }
+
+        .tool-results h4 {
+            font-family: var(--font-family-primary);
+            font-size: 1.2rem;
+            color: var(--accent-color);
+            margin-bottom: 0.8rem;
+        }
+
+        .tool-results ul {
+            list-style: none;
+        }
+
+        .tool-results li {
+            padding: 0.3rem 0;
+            border-bottom: 1px dashed rgba(0,0,0,0.1);
+        }
+
+        .tool-results li:last-child {
+            border-bottom: none;
+        }
+
+        .error-message {
+            color: #dc3545;
+            font-size: 0.9rem;
+            margin-top: 0.5rem;
+            text-align: center;
+        }
+
+        .about-content {
+            max-width: 800px;
+            margin: 0 auto;
+            font-size: 1.1rem;
+            color: var(--dark-gray);
+        }
+
+        .contact-form {
+            max-width: 600px;
+            margin: 2rem auto 0;
+            text-align: left;
+            background-color: #fff;
+            padding: 2.5rem;
+            border-radius: 8px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+        }
+
+        .contact-form .form-group textarea {
+            min-height: 120px;
+            resize: vertical;
+        }
+
+        footer {
+            background-color: var(--text-color);
+            color: #fff;
+            padding: 3rem 0;
+            text-align: center;
+        }
+
+        .footer-content {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 1.5rem;
+        }
+
+        .footer-nav ul {
+            list-style: none;
+            display: flex;
+            gap: 1.5rem;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        .footer-nav a {
+            color: #fff;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .footer-nav a:hover {
+            color: var(--primary-color);
+        }
+
+        .social-links {
+            list-style: none;
+            display: flex;
+            gap: 1.5rem;
+        }
+
+        .social-links a {
+            color: #fff;
+            font-size: 1.5rem;
+            transition: color 0.3s ease;
+        }
+
+        .social-links a:hover {
+            color: var(--primary-color);
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .nav-links {
+                flex-direction: column;
+                align-items: center;
+                gap: 0.5rem;
+                width: 100%;
+                margin-top: 1rem;
+            }
+
+            .logo {
+                margin-bottom: 1rem;
+                width: 100%;
+                text-align: center;
+            }
+            nav {
+                flex-direction: column;
+            }
+
+            .hero {
+                padding: 6rem 0;
+            }
+
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+
+            .hero p {
+                font-size: 1rem;
+            }
+
+            h2 {
+                font-size: 2rem;
+            }
+
+            .grid-3 {
+                grid-template-columns: 1fr;
+            }
+
+            .tools-section {
+                grid-template-columns: 1fr;
+            }
+
+            .tool-card {
+                padding: 1.5rem;
+            }
+
+            .ingredient-input-row {
+                flex-wrap: wrap;
+            }
+
+            .ingredient-input-row input {
+                flex: 1 1 100%;
+            }
+
+            .ingredient-input-row .quantity-input,
+            .ingredient-input-row .unit-input {
+                flex: 1 1 calc(50% - 5px);
+            }
+
+            .ingredient-input-row .remove-ingredient {
+                flex: 1 1 100%;
+                margin-top: 0.5rem;
+            }
+
+            .footer-content {
+                gap: 1rem;
+            }
+
+            .footer-nav ul, .social-links {
+                flex-wrap: wrap;
+                justify-content: center;
+                gap: 1rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .hero h1 {
+                font-size: 2rem;
+            }
+
+            .hero p {
+                font-size: 0.9rem;
+            }
+
+            h2 {
+                font-size: 1.8rem;
+            }
+
+            .recipe-card-content {
+                padding: 1rem;
+            }
+
+            .tool-card h3 {
+                font-size: 1.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <nav>
+                <a href="#home" class="logo">FoodBlog</a>
+                <ul class="nav-links">
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#recipes">Recipes</a></li>
+                    <li><a href="#tools">Tools</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section id="home" class="hero">
+            <div class="hero-content">
+                <h1>Savor the Flavor: Your Culinary Journey Starts Here</h1>
+                <p>Explore delicious recipes, master new techniques, and bring joy back to your kitchen with FoodBlog. We make home cooking inspiring and accessible for everyone.</p>
+                <a href="#recipes" class="btn">Discover Recipes</a>
+            </div>
+        </section>
+
+        <section id="recipes">
+            <div class="container">
+                <h2>Our Latest Delicious Creations</h2>
+                <div class="grid-3">
+                    <div class="recipe-card">
+                        <img src="https://via.placeholder.com/400x250/e07a5f/ffffff?text=Classic+Lasagna" alt="Classic Lasagna">
+                        <div class="recipe-card-content">
+                            <h3>Classic Beef Lasagna</h3>
+                            <p>A timeless favorite, layers of rich meat sauce, creamy béchamel, and tender pasta baked to golden perfection. Perfect for family dinners.</p>
+                            <a href="#" class="btn">View Recipe</a>
+                        </div>
+                    </div>
+                    <div class="recipe-card">
+                        <img src="https://via.placeholder.com/400x250/c96248/ffffff?text=Spicy+Tacos" alt="Spicy Chicken Tacos">
+                        <div class="recipe-card-content">
+                            <h3>Spicy Chicken Tacos</h3>
+                            <p>Quick, flavorful, and incredibly satisfying! Tender chicken seasoned with authentic spices, served in warm tortillas with fresh toppings.</p>
+                            <a href="#" class="btn">View Recipe</a>
+                        </div>
+                    </div>
+                    <div class="recipe-card">
+                        <img src="https://via.placeholder.com/400x250/fdf4f2/e07a5f?text=Vegan+Lentil+Soup" alt="Vegan Lentil Soup">
+                        <div class="recipe-card-content">
+                            <h3>Hearty Vegan Lentil Soup</h3>
+                            <p>A comforting and nutritious vegan soup packed with protein and vibrant vegetables. Easy to make and perfect for a cozy evening.</p>
+                            <a href="#" class="btn">View Recipe</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="tools">
+            <div class="container">
+                <h2>Handy Kitchen Tools</h2>
+                <div class="tools-section">
+                    <div class="tool-card">
+                        <h3>Recipe Scaler</h3>
+                        <p>Adjust ingredient quantities to match your desired serving size with ease.</p>
+                        <form id="scalerForm">
+                            <div class="form-group">
+                                <label for="originalServings">Original Servings:</label>
+                                <input type="number" id="originalServings" min="1" value="4" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="desiredServings">Desired Servings:</label>
+                                <input type="number" id="desiredServings" min="1" value="6" required>
+                            </div>
+
+                            <h4>Ingredients:</h4>
+                            <div id="ingredientInputs">
+                                <div class="ingredient-input-row">
+                                    <input type="text" placeholder="Ingredient Name (e.g., Flour)" class="ingredient-name">
+                                    <input type="number" step="0.01" min="0" placeholder="Quantity (e.g., 2)" class="quantity-input">
+                                    <input type="text" placeholder="Unit (e.g., cups)" class="unit-input">
+                                    <button type="button" class="remove-ingredient" style="display:none;">-</button>
+                                </div>
+                            </div>
+                            <button type="button" id="addIngredient" class="btn btn-secondary">Add Ingredient</button>
+                            <button type="submit" class="btn">Scale Recipe</button>
+                            <p id="scalerError" class="error-message" style="display:none;"></p>
+                        </form>
+                        <div class="tool-results" id="scaledRecipeResults">
+                            <h4>Scaled Ingredients:</h4>
+                            <ul id="scaledIngredientList">
+                                <li>No ingredients scaled yet.</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="tool-card">
+                        <h3>Ingredient Substitution Finder</h3>
+                        <p>Find suitable alternatives for common ingredients you might be missing.</p>
+                        <form id="substitutionForm">
+                            <div class="form-group">
+                                <label for="ingredientToSubstitute">Ingredient to Substitute:</label>
+                                <input type="text" id="ingredientToSubstitute" placeholder="e.g., Butter">
+                            </div>
+                            <button type="submit" class="btn">Find Substitutions</button>
+                            <p id="substitutionError" class="error-message" style="display:none;"></p>
+                        </form>
+                        <div class="tool-results" id="substitutionResults">
+                            <h4>Possible Substitutions:</h4>
+                            <ul id="substitutionList">
+                                <li>Enter an ingredient to find alternatives.</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="about">
+            <div class="container">
+                <h2>Our Story</h2>
+                <div class="about-content">
+                    <p>Welcome to FoodBlog, where every dish tells a story. We believe that cooking should be an adventure, a source of comfort, and a way to connect. Our mission is to inspire home cooks of all levels to explore new flavors, master essential techniques, and create memorable meals that bring loved ones together.</p>
+                    <p>Founded by passionate food enthusiasts, FoodBlog is more than just a collection of recipes; it's a community. We're dedicated to sharing well-tested recipes, practical tips, and engaging stories from the kitchen. Join us as we celebrate the joy of good food and the art of home cooking!</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="contact">
+            <div class="container">
+                <h2>Get in Touch</h2>
+                <p>Have a question, suggestion, or just want to share your culinary success? We'd love to hear from you!</p>
+                <form class="contact-form">
+                    <div class="form-group">
+                        <label for="name">Name:</label>
+                        <input type="text" id="name" required placeholder="Your Name">
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email:</label>
+                        <input type="email" id="email" required placeholder="your.email@example.com">
+                    </div>
+                    <div class="form-group">
+                        <label for="message">Message:</label>
+                        <textarea id="message" required placeholder="Tell us what's on your mind..."></textarea>
+                    </div>
+                    <button type="submit" class="btn">Send Message</button>
+                </form>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container footer-content">
+            <div class="footer-nav">
+                <ul>
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#recipes">Recipes</a></li>
+                    <li><a href="#tools">Tools</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </div>
+            <div class="social-links">
+                <a href="https://facebook.com/foodblog" target="_blank" aria-label="Facebook"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M9 8h-3v4h3v12h5v-12h3.642l.358-4h-4v-1.667c0-.955.192-1.333 1.139-1.333h2.861v-5h-3.647c-3.141 0-4.353 1.616-4.353 4.547v2.453z"/></svg></a>
+                <a href="https://instagram.com/foodblog" target="_blank" aria-label="Instagram"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.068 1.645.068 4.85 0 3.204-.01 3.584-.068 4.85-0.148 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.068-4.85.068-3.204 0-3.584-.01-4.85-.068-3.252-0.148-4.771-1.691-4.919-4.919-0.058-1.265-0.068-1.645-0.068-4.85 0-3.204.01-3.584.068-4.85 0.148-3.225 1.664-4.771 4.919-4.919 1.266-0.057 1.645-0.067 4.85-0.067zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-0.059 1.281-0.073 1.689-0.073 4.948 0 3.259.014 3.668.072 4.948 0.2 4.358 2.618 6.78 6.98 6.98 1.281 0.058 1.689 0.072 4.948 0.072 3.259 0 3.668-0.014 4.948-0.072 4.354-0.2 6.782-2.618 6.979-6.98 0.059-1.28.073-1.689.073-4.948 0-3.259-0.014-3.667-0.072-4.947-0.196-4.354-2.617-6.78-6.979-6.98-1.281-0.059-1.69-0.073-4.949-0.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.162 6.162 6.162 6.162-2.759 6.162-6.162c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4s1.791-4 4-4 4 1.79 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg></a>
+                <a href="https://pinterest.com/foodblog" target="_blank" aria-label="Pinterest"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0c-6.627 0-12 5.373-12 12s5.373 12 12 12 12-5.373 12-12-5.373-12-12-12zm-2.43 16.923c-.767-1.11-1.047-2.662-.511-4.22.422-1.246 2.053-4.14 2.053-4.14s-.34-.707-.123-1.438c.24-.764 1.391-.186 1.798.15.54.444.757 1.341.643 2.127-.14 1.026-.786 2.458-1.124 3.018-.466.762-1.996.398-2.298-.485-.224-.658.552-1.637.89-2.002.396-.432.223-.628-.124-1.069-.69-.89-.963-1.692-.61-2.906.634-2.288 3.633-2.072 4.381-1.488 1.464 1.144.753 4.197-.478 5.645-1.025 1.226-2.955 1.259-3.411.393-.19-.36-.083-.75.05-.98.34-.607.728-1.536.728-2.316 0-.825-1.545-1.266-1.545-2.188 0-.825.795-1.248 1.353-1.248.653 0 1.282.26 1.603.557.49.467.485 1.109.288 1.77-.384 1.288-.667 2.062-.667 2.062s.35.797.35 1.761c0 1.248-1.077 2.515-1.465 2.87-.978.914-2.42-.505-2.083-1.68z"/></svg></a>
+            </div>
+            <p>&copy; 2023 FoodBlog. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Recipe Scaler Logic
+        const scalerForm = document.getElementById('scalerForm');
+        const originalServingsInput = document.getElementById('originalServings');
+        const desiredServingsInput = document.getElementById('desiredServings');
+        const ingredientInputsDiv = document.getElementById('ingredientInputs');
+        const addIngredientBtn = document.getElementById('addIngredient');
+        const scaledIngredientList = document.getElementById('scaledIngredientList');
+        const scalerError = document.getElementById('scalerError');
+
+        // Add initial ingredient row if not present
+        if (ingredientInputsDiv.children.length === 0) {
+            addIngredientRow(true);
+        } else {
+            // Ensure the first row can't be removed
+            ingredientInputsDiv.querySelector('.remove-ingredient').style.display = 'none';
+        }
+
+        addIngredientBtn.addEventListener('click', () => addIngredientRow(false));
+
+        function addIngredientRow(isFirstRow) {
+            const newRow = document.createElement('div');
+            newRow.classList.add('ingredient-input-row');
+            newRow.innerHTML = `
+                <input type="text" placeholder="Ingredient Name (e.g., Flour)" class="ingredient-name">
+                <input type="number" step="0.01" min="0" placeholder="Quantity (e.g., 2)" class="quantity-input">
+                <input type="text" placeholder="Unit (e.g., cups)" class="unit-input">
+                <button type="button" class="remove-ingredient">-</button>
+            `;
+            ingredientInputsDiv.appendChild(newRow);
+
+            if (isFirstRow) {
+                newRow.querySelector('.remove-ingredient').style.display = 'none';
+            } else {
+                newRow.querySelector('.remove-ingredient').addEventListener('click', () => {
+                    newRow.remove();
+                });
+            }
+        }
+
+        scalerForm.addEventListener('submit', (event) => {
+            event.preventDefault();
+            scalerError.style.display = 'none';
+            scaledIngredientList.innerHTML = '';
+
+            const originalServings = parseFloat(originalServingsInput.value);
+            const desiredServings = parseFloat(desiredServingsInput.value);
+
+            if (isNaN(originalServings) || isNaN(desiredServings) || originalServings <= 0 || desiredServings <= 0) {
+                scalerError.textContent = 'Please enter valid, positive numbers for servings.';
+                scalerError.style.display = 'block';
+                scaledIngredientList.innerHTML = '<li>Error: Invalid serving sizes.</li>';
+                return;
+            }
+
+            const ingredientRows = ingredientInputsDiv.querySelectorAll('.ingredient-input-row');
+            const results = [];
+            let hasError = false;
+
+            ingredientRows.forEach(row => {
+                const nameInput = row.querySelector('.ingredient-name');
+                const quantityInput = row.querySelector('.quantity-input');
+                const unitInput = row.querySelector('.unit-unit'); // Corrected typo here
+                const unitInputField = row.querySelector('.unit-input'); // Get the unit input field
+
+                const name = nameInput.value.trim();
+                const originalQuantity = parseFloat(quantityInput.value);
+                const unit = unitInputField ? unitInputField.value.trim() : ''; // Safely get unit
+
+                if (!name || isNaN(originalQuantity) || originalQuantity < 0) {
+                    // Only show error if an ingredient row has data but it's invalid
+                    if (name || quantityInput.value.trim()) {
+                        scalerError.textContent = 'Please ensure all ingredient names are entered and quantities are valid positive numbers.';
+                        scalerError.style.display = 'block';
+                        hasError = true;
+                    }
+                    return; // Skip this row if invalid or empty
+                }
+
+                const scaledQuantity = (originalQuantity / originalServings) * desiredServings;
+                results.push(`<li>${name}: <strong>${scaledQuantity.toFixed(2)} ${unit}</strong></li>`);
+            });
+
+            if (hasError) {
+                scaledIngredientList.innerHTML = '<li>Please correct errors and try again.</li>';
+            } else if (results.length === 0) {
+                scaledIngredientList.innerHTML = '<li>No valid ingredients entered to scale.</li>';
+            } else {
+                scaledIngredientList.innerHTML = results.join('');
+            }
+        });
+
+        // Ingredient Substitution Finder Logic
+        const substitutionForm = document.getElementById('substitutionForm');
+        const ingredientToSubstituteInput = document.getElementById('ingredientToSubstitute');
+        const substitutionList = document.getElementById('substitutionList');
+        const substitutionError = document.getElementById('substitutionError');
+
+        const substitutions = {
+            "butter": ["Margarine", "Coconut oil", "Applesauce (in baking)"],
+            "milk": ["Almond milk", "Soy milk", "Oat milk", "Water (for some recipes)"],
+            "egg": ["Flax egg (1 tbsp ground flaxseed + 3 tbsp water)", "Chia egg", "Mashed banana (1/4 cup)"],
+            "flour": ["Whole wheat flour", "Almond flour (adjust liquids)", "Oat flour"],
+            "sugar": ["Honey", "Maple syrup", "Agave nectar", "Stevia (adjust quantities)"],
+            "yogurt": ["Sour cream", "Buttermilk", "Cottage cheese (blended)"],
+            "sour cream": ["Plain yogurt", "Crème fraîche", "Coconut cream"],
+            "buttermilk": ["Milk + lemon juice/vinegar (1 cup milk + 1 tbsp acid, let sit 5 mins)"],
+            "baking powder": ["Baking soda + cream of tartar (1:2 ratio)"],
+            "baking soda": ["Baking powder (use 3x amount)"],
+            "onion": ["Shallots", "Leeks", "Onion powder (1 tsp powder = 1 small onion)"],
+            "garlic": ["Garlic powder (1/4 tsp powder = 1 clove)", "Asafoetida (pinch)"],
+            "chicken broth": ["Vegetable broth", "Water + bouillon cube"],
+            "beef broth": ["Vegetable broth", "Mushroom broth"],
+            "lemon juice": ["Lime juice", "Vinegar (apple cider or white)"],
+            "heavy cream": ["Evaporated milk", "Coconut cream", "Milk + butter (melt 1/4 cup butter, whisk in 3/4 cup milk)"],
+            "cream cheese": ["Ricotta cheese", "Plain yogurt (thickened)", "Silken tofu (blended)"],
+            "mayonnaise": ["Greek yogurt", "Avocado", "Hummus"],
+            "bread crumbs": ["Crushed crackers", "Rolled oats (pulsed)", "Almond flour"],
+            "vinegar": ["Lemon juice", "Lime juice"],
+            "chocolate chips": ["Chopped chocolate bar", "Cocoa nibs", "Raisins (in some contexts)"]
+        };
+
+        substitutionForm.addEventListener('submit', (event) => {
+            event.preventDefault();
+            substitutionError.style.display = 'none';
+            substitutionList.innerHTML = '';
+
+            const ingredient = ingredientToSubstituteInput.value.trim().toLowerCase();
+
+            if (!ingredient) {
+                substitutionError.textContent = 'Please enter an ingredient to find substitutions.';
+                substitutionError.style.display = 'block';
+                substitutionList.innerHTML = '<li>Error: No ingredient entered.</li>';
+                return;
+            }
+
+            const alternatives = substitutions[ingredient];
+
+            if (alternatives && alternatives.length > 0) {
+                const resultItems = alternatives.map(alt => `<li>${alt}</li>`).join('');
+                substitutionList.innerHTML = resultItems;
+            } else {
+                substitutionError.textContent = `No direct substitution found for "${ingredient}". Try a more common ingredient!`;
+                substitutionError.style.display = 'block';
+                substitutionList.innerHTML = '<li>No substitutions found for this ingredient.</li>';
+            }
+        });
+
+        // Initialize first ingredient row's remove button visibility
+        const firstIngredientRemoveBtn = ingredientInputsDiv.querySelector('.ingredient-input-row .remove-ingredient');
+        if (firstIngredientRemoveBtn) {
+            firstIngredientRemoveBtn.style.display = 'none';
+        }
+    </script>
+</body>
+</html>
